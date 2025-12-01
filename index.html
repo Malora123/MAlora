@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MALORA - Luxury Body Splash</title>
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="apple-touch-icon" href="images/logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar main-navbar">
+        <div class="container nav-container">
+            <div class="brand">
+                <div class="brand-mark">
+                    <img src="images/logo.jpg" alt="MALORA logo" class="brand-logo-img">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">MALORA</span>
+                    <span class="brand-tagline">Body Splash</span>
+                </div>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="#home" class="nav-link active">Home</a>
+                <div class="nav-link has-dropdown">
+                    <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                        Shop
+                        <span class="dropdown-arrow"></span>
+                    </button>
+                    <div class="dropdown-menu" role="menu">
+                        <div class="dropdown-group">
+                            <div class="dropdown-title">By Gender</div>
+                            <button class="dropdown-item" data-category="all" type="button">All</button>
+                            <button class="dropdown-item" data-category="men" type="button">
+                                <i class="fa-solid fa-person"></i>
+                                Men
+                            </button>
+                            <button class="dropdown-item" data-category="women" type="button">
+                                <i class="fa-solid fa-person-dress"></i>
+                                Women
+                            </button>
+                            <button class="dropdown-item" data-category="unisex" type="button">
+                                <i class="fa-solid fa-venus-mars"></i>
+                                Unisex
+                            </button>
+                        </div>
+                        <div class="dropdown-group">
+                            <div class="dropdown-title">By Product Type</div>
+                            <button class="dropdown-item" data-type="all" type="button">All Body Splash</button>
+                        </div>
+                    </div>
+                </div>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact Us</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="icon-button" id="search-toggle" aria-label="Search" type="button">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="11" cy="11" r="6"></circle>
+                        <line x1="16" y1="16" x2="21" y2="21"></line>
+                    </svg>
+                </button>
+                <button class="icon-button" aria-label="Cart" type="button">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M6 6h15l-1.5 9h-12z"></path>
+                        <circle cx="9" cy="19" r="1.2"></circle>
+                        <circle cx="17" cy="19" r="1.2"></circle>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="search-bar" aria-hidden="true">
+            <div class="container search-container">
+                <input id="search-input" type="text" placeholder="ابحث عن بخاخ جسم (Body Splash)" />
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>تجربة عطرية فاخرة</h1>
+                    <p>
+                        مجموعة مختارة من بخاخات الجسم (Body Splash) المصممة لتمنحك إحساساً دائماً
+                        بالانتعاش والحضور في كل مناسبة.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#shop" class="btn btn-primary">تصفح المتجر</a>
+                        <a href="#about" class="btn btn-ghost">اكتشف العلامة</a>
+                    </div>
+                </div>
+                <div class="hero-highlight">
+                    <div class="hero-product-card">
+                        <span class="hero-product-brand">MALORA</span>
+                        <div class="hero-product-image-wrapper">
+                            <img src="images/Hero section.jpg" alt="MALORA Body Splash" class="hero-product-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="shop" class="shop-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2>المتجر</h2>
+                    <p>تسوق بخاخات الجسم (Body Splash) حسب التصنيف</p>
+                </header>
+
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="filter-category" class="visually-hidden">By Gender</label>
+                        <select id="filter-category">
+                            <option value="all">All</option>
+                            <option value="men">Men</option>
+                            <option value="women">Women</option>
+                            <option value="unisex">Unisex</option>
+                        </select>
+                        <div class="filter-category-display" id="filter-category-display">
+                            <div class="dropdown-title">By Gender</div>
+                            <button type="button" class="filter-category-trigger" id="filter-category-trigger">
+                                <span class="filter-category-display-text">All</span>
+                                <span class="filter-category-trigger-main-icon">
+                                    <i class="fa-solid fa-users"></i>
+                                </span>
+                                <span class="filter-category-trigger-arrow">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                            </button>
+                            <div class="filter-category-menu">
+                                <button type="button" class="filter-category-option is-active" data-value="all">
+                                    <span>All</span>
+                                </button>
+                                <button type="button" class="filter-category-option" data-value="men">
+                                    <span>Men</span>
+                                    <i class="fa-solid fa-person"></i>
+                                </button>
+                                <button type="button" class="filter-category-option" data-value="women">
+                                    <span>Women</span>
+                                    <i class="fa-solid fa-person-dress"></i>
+                                </button>
+                                <button type="button" class="filter-category-option" data-value="unisex">
+                                    <span>Unisex</span>
+                                    <i class="fa-solid fa-venus-mars"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-grid">
+                    <article class="product-card" data-category="women,unisex" data-type="body-splash" data-concentration="edt" data-family="fresh" data-price="high" data-has-sizes="true" data-detail-meta="بخاخ جسم فاخر بلمسة ناعمة مستوحاة من روائح القطن النظيف والغيم المنعش، مثالي للاستخدام اليومي بعد الاستحمام أو قبل الخروج." data-description="بداية هادية ومريحة تفضل معاك طول اليوم. لمسة خفيفة من المسك الأبيض تديك مود fresh وشبيه بإحساس بعد الشاور... بس بشكل أبسط وأطول. ثبات هادي وواضح من غير مبالغة. Clean. Subtle. Long-lasting.">
+                        <div class="product-image product-image--dark"></div>
+                        <div class="product-body">
+                            <h3 class="product-name">Fresh cloud Body Splash</h3>
+                            <p class="product-meta">لكلا الجنسين •بخاخ جسم فاخر برائحة منعشة ناعمة تناسب كل الأوقات</p>
+                            <div class="product-details">
+                                <span class="product-size">125ml</span>
+                                <span>Body Splash</span>
+                            </div>
+                            <div class="product-sizes">
+                                <button type="button" class="size-option is-active" data-size="125" data-price="130">125ml</button>
+                                <button type="button" class="size-option" data-size="225" data-price="220">225ml</button>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">130 EGP</span>
+                                <button class="btn btn-outline" type="button">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>اطلبه الآن</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="unisex" data-type="body-splash" data-concentration="edt" data-family="fresh" data-price="mid" data-has-sizes="true" data-description="ريحة شرقية بدفء عود خفيف، مش تقيله ولا مزعجه… بس ريحتها تديك فوحان طول اليوم. تفضل معك بخفه وهدوء وتديك احساس شتوي دافي ومرتب، للي يختار الهدوء بس يحب العمق والثبات.">
+                        <div class="product-image product-image--rawnq"></div>
+                        <div class="product-body">
+                            <h3 class="product-name">RAWNQ Body Splash</h3>
+                            <p class="product-meta"> لكلا الجنسين • شرقي بدفء عود خفيف، فوحان وثبات بهدوء طول اليوم</p>
+                            <div class="product-details">
+                                <span class="product-size">125ml</span>
+                                <span>Body Splash</span>
+                            </div>
+                            <div class="product-sizes">
+                                <button type="button" class="size-option is-active" data-size="125" data-price="130">125ml</button>
+                                <button type="button" class="size-option" data-size="225" data-price="220">225ml</button>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">130 EGP</span>
+                                <button class="btn btn-outline" type="button">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>اطلبه الآن</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="women" data-type="body-splash" data-concentration="edt" data-family="floral" data-price="high" data-has-sizes="true" data-description="لو الورد مشكله بالنسبالك تبقي Flora هتحلها عشان هي لمسه خفيفه ورقيقه من ريحه الورد الي هتحسسك انها ريحه انثويه وناعمه ومختلفه وثابته معاكي طول اليوم عشان تحسسك بالنعومه والراحه">
+                        <div class="product-image product-image--cozy-flora"></div>
+                        <div class="product-body">
+                            <h3 class="product-name">Flora Body Splash</h3>
+                            <p class="product-meta"> نسائي • بخاخ جسم زهري ناعم مستوحى من أجواء الورد الناعمة</p>
+                            <div class="product-details">
+                                <span class="product-size">125ml</span>
+                                <span>Body Splash</span>
+                            </div>
+                            <div class="product-sizes">
+                                <button type="button" class="size-option is-active" data-size="125" data-price="130">125ml</button>
+                                <button type="button" class="size-option" data-size="225" data-price="220">225ml</button>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">130 EGP</span>
+                                <button class="btn btn-outline" type="button">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>اطلبه الآن</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="men" data-type="body-splash" data-concentration="edt" data-family="fruity" data-price="low" data-has-sizes="true" data-description="بخاخ جسم Prime مصمم خصيصًا للرجال الذين يبحثون عن رائحة قوية وجريئة تعبر عن شخصيتهم المميزة. تركيبة فاخرة بتركيز عالي تمنحك حضورًا قويًا وثقة استثنائية. رائحة ثابتة وجذابة تدوم طوال اليوم، مثالية للمناسبات المهمة والخروجات الخاصة. إذا كنت تفضل نفس الرائحة بشكل هادئ، جرب Wild.">
+                        <div class="product-image product-image--prime"></div>
+                        <div class="product-body">
+                            <h3 class="product-name">Prime Body Splash</h3>
+                            <p class="product-meta"> رجالي • بخاخ جسم بتركيز قوي للحضور المميز</p>
+                            <div class="product-details">
+                                <span class="product-size">125ml</span>
+                                <span>Body Splash</span>
+                            </div>
+                            <div class="product-sizes">
+                                <button type="button" class="size-option is-active" data-size="125" data-price="130">125ml</button>
+                                <button type="button" class="size-option" data-size="225" data-price="220">225ml</button>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">130 EGP</span>
+                                <button class="btn btn-outline" type="button">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>اطلبه الآن</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="women" data-type="body-splash" data-concentration="edt" data-family="oriental" data-price="mid" data-has-sizes="true" data-description="ريحة فراولة هادية بنعومة فانيليا خفيفة، Sugary بشكل بسيط ومريحة ليكي. مش قوية ولا مزعجة لكن وجودها يفضل معاكي طول اليوم. سِنت هادي، أنثوي، وثابت معاكي.">
+                        <div class="product-image product-image--cozy-strawberry"></div>
+                        <div class="product-body">
+                            <h3 class="product-name">Cozy Strawberry Body Splash</h3>
+                            <p class="product-meta"> نسائي • بخاخ جسم برائحة فاكهية ناعمة مستوحاة من الفراولة</p>
+                            <div class="product-details">
+                                <span class="product-size">125ml</span>
+                                <span>Body Splash</span>
+                            </div>
+                            <div class="product-sizes">
+                                <button type="button" class="size-option is-active" data-size="125" data-price="130">125ml</button>
+                                <button type="button" class="size-option" data-size="225" data-price="220">225ml</button>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">130 EGP</span>
+                                <button class="btn btn-outline" type="button">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>اطلبه الآن</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="women" data-type="body-splash" data-concentration="edt" data-family="fresh" data-price="low" data-has-sizes="true" data-description="لو بتحبي تكون ريحتك فريش وفي نفس الوقت انثويه وهاديه هو دا اختيارك. لمسات من الورد علي فواكه بسيطه تديكي انوثه ناعمه وخفيفه معاكي طول اليوم. أنثوي، رقيق، ويبقى بهدوء جميل. توازن ناعم بين الفاكهة والورد.">
+                        <div class="product-image product-image--red-velvet"></div>
+                        <div class="product-body">
+                            <h3 class="product-name">Red Velvet Body Splash</h3>
+                            <p class="product-meta"> نسائي • توازن ناعم بين فاكهة منعشة وورد أنثوي</p>
+                            <div class="product-details">
+                                <span class="product-size">125ml</span>
+                                <span>Body Splash</span>
+                            </div>
+                            <div class="product-sizes">
+                                <button type="button" class="size-option is-active" data-size="125" data-price="130">125ml</button>
+                                <button type="button" class="size-option" data-size="225" data-price="220">225ml</button>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">130 EGP</span>
+                                <button class="btn btn-outline" type="button">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>اطلبه الآن</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="women" data-type="body-splash" data-concentration="edt" data-family="gourmand" data-price="low" data-has-sizes="true" data-description="مزيج بين جوز الهند والفانيليا الدافيه احساس هادي ومريح طول اليوم واحساس بالنعومه والترطيب. سنت مختلفه هتخليكي تشوفي المزيج بين جوز الهند والفانيليا بشكل مختلف وجديد في وصف المنتج.">
+                        <div class="product-image product-image--vanilla-coconut"></div>
+                        <div class="product-body">
+                            <h3 class="product-name">Vanilla Coconut Body Splash</h3>
+                            <p class="product-meta"> نسائي • بخاخ جسم برائحة فانيليا وجوز الهند ناعمة ومنعشة</p>
+                            <div class="product-details">
+                                <span class="product-size">125ml</span>
+                                <span>Body Splash</span>
+                            </div>
+                            <div class="product-sizes">
+                                <button type="button" class="size-option is-active" data-size="125" data-price="130">125ml</button>
+                                <button type="button" class="size-option" data-size="225" data-price="220">225ml</button>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">130 EGP</span>
+                                <button class="btn btn-outline" type="button">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>اطلبه الآن</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="men" data-type="body-splash" data-concentration="edt" data-family="floral" data-price="mid" data-has-sizes="true" data-description="بخاخ جسم Wild مصمم خصيصًا للرجال الذين يفضلون رائحة جريئة ومميزة بشكل هادئ، مما يجعله مثاليًا للاستخدام اليومي والمناسبات غير الرسمية. رائحة منعشة ومتوازنة تدوم طوال اليوم دون مبالغة، تمنحك الثقة والحضور بأسلوب هادئ وجذاب.">
+                        <div class="product-image product-image--wild"></div>
+                        <div class="product-body">
+                            <h3 class="product-name">Wild Body Splash</h3>
+                            <p class="product-meta"> رجالي • بخاخ جسم بتركيز خفيف مثالي لليوم</p>
+                            <div class="product-details">
+                                <span class="product-size">125ml</span>
+                                <span>Body Splash</span>
+                            </div>
+                            <div class="product-sizes">
+                                <button type="button" class="size-option is-active" data-size="125" data-price="130">125ml</button>
+                                <button type="button" class="size-option" data-size="225" data-price="220">225ml</button>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">130 EGP</span>
+                                <button class="btn btn-outline" type="button">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>اطلبه الآن</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="product-detail" class="product-detail" aria-hidden="true">
+            <header class="navbar product-detail-navbar">
+                <div class="container nav-container">
+                    <div class="brand">
+                        <div class="brand-mark">
+                            <img src="images/logo.jpg" alt="MALORA logo" class="brand-logo-img">
+                        </div>
+                        <div class="brand-text">
+                            <span class="brand-name">MALORA</span>
+                            <span class="brand-tagline">Body Splash</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-ghost product-detail-back">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        الرجوع للمتجر
+                    </button>
+                </div>
+            </header>
+
+            <div class="container product-detail-layout">
+                <div class="product-detail-content">
+                    <div class="product-detail-media">
+                        <div class="product-detail-image product-image"></div>
+                    </div>
+                    <div class="product-detail-info">
+                        <h1 class="product-detail-name"></h1>
+                        <p class="product-detail-meta"></p>
+                        <div class="product-detail-extra">
+                            <span class="product-detail-size"></span>
+                            <span class="product-detail-type"></span>
+                        </div>
+                        <div class="product-detail-price-row">
+                            <span class="product-detail-price"></span>
+                        </div>
+                        <div class="product-detail-sizes"></div>
+                        
+                        <div class="product-detail-description">
+                            <h3 class="product-detail-description-title">وصف المنتج</h3>
+                            <p class="product-detail-description-text"></p>
+                        </div>
+
+                        <div class="product-detail-features">
+                            <h3 class="product-detail-features-title">المميزات</h3>
+                            <ul class="product-detail-features-list">
+                                <li><i class="fa-solid fa-check"></i> تركيبة فاخرة من الزيوت العطرية</li>
+                                <li><i class="fa-solid fa-check"></i> ثبات طويل الأمد</li>
+                                <li><i class="fa-solid fa-check"></i> مناسب للاستخدام اليومي</li>
+                                <li><i class="fa-solid fa-check"></i> آمن على البشرة</li>
+                            </ul>
+                        </div>
+
+                        <div class="product-detail-actions">
+                            <a class="btn btn-primary product-detail-whatsapp" href="#" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span>اطلب عبر واتساب</span>
+                            </a>
+                            <a class="btn btn-outline product-detail-instagram" href="#" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span>اطلب عبر إنستجرام</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-detail-related">
+                    <h3 class="product-detail-related-title">منتجات مشابهة</h3>
+                    <div class="products-grid product-detail-related-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <h2>من نحن</h2>
+                    <p>
+                        نحن علامة متخصصة في بخاخات الجسم (Body Splash) الفاخرة، نختار مكوناتنا بعناية
+                        لنقدم لك تجربة حسية منعشة تعكس شخصيتك وتليق بحضورك.
+                    </p>
+                    <p>
+                        يمتزج في كل زجاجة شغف الحرفة مع لمسات عصرية، لنخلق عطراً لا يُنسى يرافقك في
+                        لحظاتك الخاصة واليومية.
+                    </p>
+                </div>
+                <div class="about-highlight">
+                    <div class="about-card">
+                        <h3>لماذا تختارنا؟</h3>
+                        <ul>
+                            <li>أجود الزيوت العطرية ومكونات طبيعية مسالمة للجسم تمنحك إحساسًا بالنظافة والانتعاش مع عناية لطيفة بالبشرة.</li>
+                            <li>تصنيفات متنوعة تناسب الرجال والنساء ولكلا الجنسين.</li>
+                            <li>تشكيلة متكاملة من بخاخات الجسم بروائح مختلفة تناسب كل الأذواق.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="reviews-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2>آراء العملاء</h2>
+                    <p>بعض ما قيل عن تجربة منتجات الجسم لدينا.</p>
+                </header>
+                <div class="reviews-grid">
+                    <article class="review-card review-card--male">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">أحمد</span>
+                                <span class="review-location">القاهرة، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"ثبات البودي سبلاش رائع جداً، أشعر بالانتعاش طوال اليوم."</p>
+                    </article>
+                    <article class="review-card review-card--female">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person-dress"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">سارة</span>
+                                <span class="review-location">الإسكندرية، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"الروائح ناعمة وأنثوية، وأستخدم البودي سبلاش بعد الاستحمام يوميًا."</p>
+                    </article>
+                    <article class="review-card review-card--female">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person-dress"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">نورة</span>
+                                <span class="review-location">الجيزة، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"ثبات مذهل بدون أن يكون العطر ثقيل، مثالي للاستخدام قبل النوم."</p>
+                    </article>
+                    <article class="review-card review-card--male">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">خالد</span>
+                                <span class="review-location">طنطا، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"سعر ممتاز مقابل الجودة، وأحب أن الرائحة تناسب الاستخدام اليومي."</p>
+                    </article>
+                    <article class="review-card review-card--male">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">محمد</span>
+                                <span class="review-location">المنصورة، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"أحببت تنوع الروائح، وأستخدم أكثر من نوع حسب المزاج والمناسبة."</p>
+                    </article>
+                    <article class="review-card review-card--female">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person-dress"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">ليلى</span>
+                                <span class="review-location">دمياط، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"العبوة عملية للاستخدام اليومي، والرائحة ثابتة بشكل لطيف بدون مبالغة."</p>
+                    </article>
+                    <article class="review-card review-card--male">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">إسلام</span>
+                                <span class="review-location">أسيوط، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"الرائحة ثابتة لكن خفيفة، مناسبة جداً للمكتب والجامعة."</p>
+                    </article>
+                    <article class="review-card review-card--female">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person-dress"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">مها</span>
+                                <span class="review-location">شرم الشيخ، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"تعليقات صديقاتي دائماً إيجابية على رائحة البودي سبلاش، أنصح به."</p>
+                    </article>
+                    <!-- duplicated set for seamless scrolling -->
+                    <article class="review-card review-card--male">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">أحمد</span>
+                                <span class="review-location">القاهرة، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"ثبات البودي سبلاش رائع جداً، أشعر بالانتعاش طوال اليوم."</p>
+                    </article>
+                    <article class="review-card review-card--female">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person-dress"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">سارة</span>
+                                <span class="review-location">الإسكندرية، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"الروائح ناعمة وأنثوية، وأستخدم البودي سبلاش بعد الاستحمام يوميًا."</p>
+                    </article>
+                    <article class="review-card review-card--female">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person-dress"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">نورة</span>
+                                <span class="review-location">الجيزة، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"ثبات مذهل بدون أن يكون العطر ثقيل، مثالي للاستخدام قبل النوم."</p>
+                    </article>
+                    <article class="review-card review-card--male">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">خالد</span>
+                                <span class="review-location">طنطا، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"سعر ممتاز مقابل الجودة، وأحب أن الرائحة تناسب الاستخدام اليومي."</p>
+                    </article>
+                    <article class="review-card review-card--male">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">محمد</span>
+                                <span class="review-location">المنصورة، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"أحببت تنوع الروائح، وأستخدم أكثر من نوع حسب المزاج والمناسبة."</p>
+                    </article>
+                    <article class="review-card review-card--female">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <span class="review-avatar-initial"><i class="fa-solid fa-person-dress"></i></span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-name">ليلى</span>
+                                <span class="review-location">دمياط، مصر</span>
+                            </div>
+                        </div>
+                        <p class="review-text">"العبوة عملية للاستخدام اليومي، والرائحة ثابتة بشكل لطيف بدون مبالغة."</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container contact-grid">
+                <div class="contact-text">
+                    <h2>اتصل بنا</h2>
+                    <p>للاستفسارات أو الطلبات الخاصة، يسعدنا تواصلك معنا.</p>
+                    <div class="contact-logo contact-logo--large">
+                        <img src="images/logo.jpg" alt="MALORA logo" class="contact-logo-img contact-logo-img--large">
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form" action="mailto:Mokamalak110@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">الاسم</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">رسالتك</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">إرسال</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-column footer-column-brand">
+                <span class="footer-logo">MALORA</span>
+                <span class="footer-tagline">Body Splash</span>
+                <span class="footer-copy"> 2025 MALORA Body Splash. </span>
+                <a href="https://wa.me/2001010248051" class="footer-made-by" target="_blank" rel="noopener">صنع بواسطة <span class="footer-made-by-name">MoazZehry</span></a>
+            </div>
+            <div class="footer-column footer-column-links">
+                <a href="#shop">المتجر</a>
+                <a href="#about">من نحن</a>
+                <a href="#reviews">آراء العملاء</a>
+                <a href="#contact">اتصل بنا</a>
+            </div>
+            <div class="footer-column footer-column-social">
+                <span class="footer-label">تابعنا وتواصل معنا</span>
+                <div class="footer-social-links">
+                    <a href="https://www.instagram.com/mal0ra_/?igsh=MTMzMGxmc2twdDQ0ag%3D%3D&utm_source=qr#" class="footer-social-icon" aria-label="Instagram" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/14SgofxNDap/?mibextid=wwXIfr" class="footer-social-icon" aria-label="Facebook" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@mal0ra_7?_r=1&_t=ZS-91lAojsssi4" class="footer-social-icon" aria-label="TikTok" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://wa.me/201108021991" class="footer-social-icon" aria-label="WhatsApp" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
